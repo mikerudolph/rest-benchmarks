@@ -1,0 +1,31 @@
+{
+  "name": "rest-benchmarks",
+  "version": "0.0.1",
+  "description": "benchmarking various nodejs web frameworks",
+  "main": "bench.js",
+  "dependencies": {
+    "bench-rest": "~0.6.1",
+    "express": "~4.7.2",
+    "hapi": "^6.2.1",
+    "restify": "^2.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "bench"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/mikerudolph/rest-benchmarks"
+  },
+  "keywords": [
+    "rest",
+    "benchmarks",
+    "nodejs"
+  ],
+  "author": "Mike Rudolph",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikerudolph/rest-benchmarks/issues"
+  },
+  "homepage": "https://github.com/mikerudolph/rest-benchmarks"
+}
