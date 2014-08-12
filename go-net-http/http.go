@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"runtime"
 )
 
 type BenchmarkJSON []struct {
@@ -39,6 +40,7 @@ var content []byte
 var jsonFile BenchmarkJSON
 
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	content, err := ioutil.ReadFile("../small.json")
 	if err != nil {
 	} else {
@@ -50,7 +52,7 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	body, err := json.Marshal(jsonFile[0])
+	body, err := json.Marshal(jsonFile)
 	if err != nil {
 		fmt.Println("There is an issue")
 	}
